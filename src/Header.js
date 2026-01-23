@@ -1,8 +1,7 @@
 function Header(){
     return(
         <header>
-            src="/logo192.png" 
-            alt="Little Lemon Logo" 
+            <img src="/logo192.png" alt="Little Lemon Logo" />
         </header>
     );
 }

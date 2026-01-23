@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+/* =====================
+   RESET + BASE
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #edefee;
+  color: #333;
+  line-height: 1.6;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* =====================
+   TIPOGRAFIA
+===================== */
+h1 {
+  font-size: 2.5rem;
+  color: #495e57;
+  margin-bottom: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 2rem;
+  color: #495e57;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+span {
+  color: #f4ce14;
+  font-weight: bold;
+}
+
+/* =====================
+   HEADER
+===================== */
+header {
+  background-color: #495e57;
+  padding: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+header img {
+  max-width: 160px;
+  border-radius: 6px;
+}
+
+/* =====================
+   NAVEGAÇÃO
+===================== */
+nav {
+  background-color: #f4ce14;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+nav li {
+  transition: transform 0.2s ease;
+}
+
+nav li:hover {
+  transform: scale(1.05);
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+/* =====================
+   MAIN (LAYOUT)
+===================== */
+main {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+main section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================
+   IMAGENS
+===================== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background-color: #495e57;
   color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+footer p {
+  color: white;
+  font-size: 0.9rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* =====================
+   RESPONSIVO
+===================== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  main section {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 }
