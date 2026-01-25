@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Structure
+This project follows a component-based structure using React, with reusable UI components organized inside the `components` folder.
+
 ## Available Scripts
 
 In the project directory, you can run:
