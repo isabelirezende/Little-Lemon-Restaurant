@@ -1,11 +1,14 @@
 import BookingForm from "../components/BookingForm";
 
 
-function BookingPage(){
+function BookingPage({avaiableTimes, dispatch}){
     return(
         <main>
             <h1>Book a Table</h1>
-            <BookingForm />
+            <BookingForm
+            avaiableTimes={avaiableTimes}
+            dispatch={dispatch}
+            />
         </main>
     );
 }
