@@ -1,13 +1,29 @@
 import { useState } from "react";
 
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch,submitForm }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("");
 
+    const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = {
+      date,
+      time,
+      guests,
+      occasion,
+    };
+
+    submitForm(formData);
+  };
+
   return (
-    <form style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+    <form 
+      onSubmit={handleSubmit}
+      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+    >
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -15,8 +31,9 @@ function BookingForm({ availableTimes, dispatch }) {
         value={date}
         onChange={(e) => {
           setDate(e.target.value);
-          dispatch({ type: "UPDATE_TIMES", date: e.target.value });
+          dispatch(new Date(e.target.value));
         }}
+        required
       />
 
       <label htmlFor="res-time">Choose time</label>
@@ -24,6 +41,7 @@ function BookingForm({ availableTimes, dispatch }) {
         id="res-time"
         value={time}
         onChange={(e) => setTime(e.target.value)}
+        required
       >
         {availableTimes?.map((time) => (
           <option key={time}>{time}</option>
@@ -51,7 +69,7 @@ function BookingForm({ availableTimes, dispatch }) {
         <option>Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your Reservation" />
+      <button type="submit">"Make Your Reservation"</button>
     </form>
   );
 }
