@@ -4,14 +4,12 @@ import HomePage from "./pages/HomePage";
 import BookingPage from "./pages/BookingPage";
 import ConfirmedBooking from "./pages/ConfirmedBooking";
 
-/* reducer já existente */
-const updateTimes = (state, action) => {
-  return window.fetchAPI(action);
+export const initializeTimes = () => {
+  return window.fetchAPI(new Date());
 };
 
-const initializeTimes = () => {
-  const today = new Date();
-  return window.fetchAPI(today);
+export const updateTimes = (state, action) => {
+  return window.fetchAPI(action);
 };
 
 function Main() {
@@ -23,7 +21,6 @@ function Main() {
 
   const navigate = useNavigate();
 
-  // ✅ PASSO 2 DA ATIVIDADE
   const submitForm = (formData) => {
     if (window.submitAPI(formData)) {
       navigate("/confirmed");
