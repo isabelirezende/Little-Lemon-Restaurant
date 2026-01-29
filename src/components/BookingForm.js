@@ -71,7 +71,7 @@ function BookingForm({ availableTimes = [], dispatch, onSubmit }) {
         <option>Anniversary</option>
       </select>
 
-      <button type="submit" disabled={!isValid}>
+      <button type="submit" disabled={!isValid} aria-label="Ao clicar">
         Make Your reservation
       </button>
     </form>
